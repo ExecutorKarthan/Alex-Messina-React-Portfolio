@@ -1,0 +1,152 @@
+/*Clear previous formatting to allow for granular control and set a background for the page.*/
+*{
+    padding: 0px;
+    margin: 0px;
+    background-color: #D8BFD8;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+body {overflow-x: hidden;}
+
+/*Formate the elements of the heard to be ascetically pleasing.*/
+h1 {
+    padding: 1%;
+    margin: 0%;
+    font-size: 125%;
+    text-align: center;
+}
+
+nav {
+    padding-left: 0;
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.navLink{ 
+    width: 100%;
+    text-align: center;
+    padding-top: 5%;
+    color: black;
+    font-size: 75%;
+}
+
+#contactMe,footer{
+    display: flex;
+    justify-content: center;
+    font-size:150%;
+}
+
+/*Create a stylized break to separate the header/navigation links from the main body of the webpage.*/
+h3{
+    background-color: silver;
+    padding-top: 3%;
+    margin-top: 2%;
+    padding: 1%;
+    font-size: 75%;
+    text-align: center;
+}
+
+/*Stylize the "About me" section of the page.*/
+.aboutMe{
+    width: 100%;
+    margin: 1%;  
+}
+
+#profilePic{
+    max-width: 500px;
+    width:100%;
+    float:right;
+    max-height: auto;
+    padding: 2%;
+}
+
+.workImage{   
+    display: flex;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 75%;  
+    font-size: 45%;
+}
+
+.repoLink{
+    word-wrap: break-word;
+}
+
+.workBox, .appDescription{
+    margin-top: 2%;
+}
+
+#appDescription{
+    margin-top: 2%;
+}
+
+/*Stylize the "Contact me" section of the page.*/
+.contactLinks {
+    min-width: 100%;
+    padding-right: 3%;
+    margin: 1%;
+    display: grid;
+    place-items:center;
+    
+}
+
+#email, #gitHub, #linkedIn {
+    display: grid;
+    place-items:center;
+    text-align: center;
+}
+
+.contactImage{
+    width: auto;
+    height: 150px;
+    padding-left: 1%;
+}
+
+.contactLink, .repoLink{
+    font-size: 18px;
+    color: black;
+}
+
+/*Create a hover tooltip that explains what clicking each "contact me" icon will link to.*/
+.emailToolTip:hover::after, .githubToolTip:hover::after, .linkedInToolTip:hover::after{
+    position:absolute;
+    max-width: 100%;
+    border: 1px black solid;
+    background-color:black;
+    padding: 1%;
+    color: whitesmoke;
+    font-size: 50%;
+}
+
+.emailToolTip:hover::after{
+    content:"Click here to contact me by email.";
+}
+
+.githubToolTip:hover::after{
+    content:"Click here to view my code repositories, including personal projects.";
+}
+
+.linkedInToolTip:hover::after{
+    content:"Click here to connect via LinkedIn and to see my profile.";
+}
+
+/*Add media rules to reformat the webpage to respond to different user window sizes*/
+@media screen and (min-width: 760px) {
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navLink{       
+        font-size: 80%;
+        width: fit-content;
+        padding: 3%;
+    }
+}

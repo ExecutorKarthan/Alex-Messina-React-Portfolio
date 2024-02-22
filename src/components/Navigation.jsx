@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <NavBar
       links={[
-        <Link key={1} className="nav-link text-dark" to="/">
+        <Link key={1} className="nav-link text-dark" to="/AboutMe">
           About Me
         </Link>,
         <Link key={2} className="nav-link text-dark" to="/Portfolio">
