@@ -42,7 +42,7 @@ nav {
 }
 
 /*Create a stylized break to separate the header/navigation links from the main body of the webpage.*/
-h3{
+#navBar{
     background-color: silver;
     padding-top: 3%;
     margin-top: 2%;
@@ -112,6 +112,11 @@ h3{
 .contactLink, .repoLink{
     font-size: 18px;
     color: black;
+}
+
+/*Stylize the Resume Section*/
+.react-pdf_Page{
+    background-color: transparent;
 }
 
 /*Create a hover tooltip that explains what clicking each "contact me" icon will link to.*/

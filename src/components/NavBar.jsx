@@ -1,9 +1,7 @@
 export default function Nav({links}){
     return(
-        <div className="col text-center">
-            <ul>
-                {links.map((link) => link)}
-            </ul>
+        <div className="row text-center" id="navBar">
+            {links.map((link) => link)}
         </div>
     )
 }

@@ -4,7 +4,7 @@ import linkedIn from '../assets/linkedInIcon.png';
 
 const Footer = () =>{
     return(
-        <section classNameName="container-fluid contactLinks">
+        <section className="container-fluid contactLinks">
             <div className="row">
                 <div className="col" id="email">
                     <a className="emailToolTip" href="mailto:me@alexmessina.dev"> <img className="contactImage" src={email} alt="This is an icon of a letter representing email" id="email"/></a>
