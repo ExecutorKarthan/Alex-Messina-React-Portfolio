@@ -24,7 +24,7 @@ function ProjectFormatter({projects})  {
             <section className="row" key={project.id}>
                 <div className="workBox">
                     <div className = "row">
-                    <div className="column"><img class="mx-auto d-block workImage" src={imgMap.get(project.image)}/></div>
+                    <div className="column"><img className="mx-auto d-block workImage" src={imgMap.get(project.image)}/></div>
                     <p className="appDescription column">
                             {project.description}
                         </p>
