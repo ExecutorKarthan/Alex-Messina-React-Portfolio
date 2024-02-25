@@ -27,7 +27,8 @@ const projects =
         repoLink:`https://github.com/ExecutorKarthan/SQL-Employee-Manager`,
         image: `../assets/SQL-Manager-Demo.gif`,
         description: `This is a command line app that uses several SQL tables that all interact with each other. It allows the user to 
-            add employees, change their roles and supervisors, add departments and more!`,
+            add employees, change their roles and supervisors, add departments and more! This project specifically focused on making schemas within
+            SQL models. This was designed to be a completely backend app with a bare-bones UI.`,
         programmingConcepts:`SQL Modeling, SQL model association`,
         technologies:`MySQL, Bcrypt, Inquirer, Dotenv, Sequelize, Mysql2`,
     },
@@ -37,7 +38,8 @@ const projects =
         repoLink:`https://github.com/ExecutorKarthan/SVG-Logo-Maker`,
         image: `../assets/SVG-Logo-Maker.gif`,
         description: `This is a command line app that creates logos given user input. It will create a vector graphic using three user inputted letters,
-            a selected shape, and two color selections: one for the shape and the other for the background.`,
+            a selected shape, and two color selections: one for the shape and the other for the background. I also used unit tests to double check my work prior
+            to the program running.`,
         programmingConcepts:`SQL Modeling, SQL model association, Responsive Web-pages`,
         technologies:`MySQL, Bcrypt, Inquirer, Dotenv, Sequelize, Mysql2`,
     },

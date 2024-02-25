@@ -10,37 +10,6 @@
 
 body {overflow-x: hidden;}
 
-/*Formate the elements of the heard to be ascetically pleasing.*/
-h1 {
-    padding: 1%;
-    margin: 0%;
-    font-size: 125%;
-    text-align: center;
-}
-
-nav {
-    padding-left: 0;
-    margin: 1%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.navLink{ 
-    width: 100%;
-    text-align: center;
-    padding-top: 5%;
-    color: black;
-    font-size: 75%;
-}
-
-#contactMe,footer{
-    display: flex;
-    justify-content: center;
-    font-size:150%;
-}
-
 /*Create a stylized break to separate the header/navigation links from the main body of the webpage.*/
 #navBar{
     background-color: silver;
@@ -88,20 +57,16 @@ nav {
     margin-left: 5%;
 }
 
-/* #appDescription{
-    margin-top: 2%;
-} */
-
 /*Stylize Portfolio section*/
 .prompt{
     font-size:x-large;
     font-weight: bold;
     word-wrap: break-word;
-    margin-left: 6%;
+    margin-left: 4%;
 }
 .appDescription, .progConcepts, .techUsed{
     font-size:x-large;
-    margin-left: 5%;    
+    margin-left: 4%;    
 }
 
 /*Stylize the "Contact me" section of the page.*/
@@ -165,24 +130,39 @@ nav {
 
 /*Add media rules to reformat the webpage to respond to different user window sizes*/
 @media screen and (min-width: 760px) {
-    header{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .navLink{       
-        font-size: 80%;
-        width: fit-content;
-        padding: 3%;
+    #navBar{
+        background-color: silver;
+        padding-left: 12%;
+        font-size: 90%;
+        padding-top: 0%;
+        text-align: center;
+        word-wrap: break-word;
     }
 
     .workImage{   
         display: flex;
-        padding: 1%;
+        padding: 3%;
         align-items: center;
         justify-content: center;
         text-align: center;
-        max-width: 40%;  
+        max-width: 37%;  
         font-size: 45%;
+    }
+
+    .prompt{
+        font-size:x-large;
+        font-weight: bold;
+        word-wrap: break-word;
+        margin-left: 6%;
+        width:25%
+    }
+    .appDescription, .progConcepts, .techUsed{
+        font-size:x-large;
+        margin-left: 5%;    
+    }
+
+    .workBox, .appDescription{
+        margin-top: 2%;
+        width: 93%;
     }
 }
