@@ -14,11 +14,16 @@ const resumeDivStyle = {
 
 function viewPDF() {
   return (
-    <div style={resumeDivStyle}>
-      <Document file={ResumePDF} >
-        <Page pageNumber={1} renderAnnotationLayer={false} renderTextLayer={false} />
-        <Page pageNumber={2} renderAnnotationLayer={false} renderTextLayer={false}/>
-      </Document>
+    <div>
+      <div>
+        <a href= {ResumePDF} download="Resume- J Alexander Messina"> <button>Download .pdf file</button></a>
+      </div>
+      <div style={resumeDivStyle}>
+        <Document file={ResumePDF} >
+          <Page pageNumber={1} renderAnnotationLayer={false} renderTextLayer={false} />
+          <Page pageNumber={2} renderAnnotationLayer={false} renderTextLayer={false}/>
+        </Document>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import svg from '../assets/SVG-Logo-Maker.gif'
 import workDay from '../assets/Work Day Scheduler - data entry and retention.gif'
 import worth from '../assets/WorththeWatch.gif'
 
+
 function ProjectFormatter({projects})  {
     const imgMap = new Map([
         ['../assets/5-day-Forecast Demo.gif', forecast],
@@ -22,12 +23,14 @@ function ProjectFormatter({projects})  {
         projects.map((project) =>(
             <section className="row" key={project.id}>
                 <div className="workBox">
-                    <div className="row"><img src={imgMap.get(project.image)}/></div>
-                    <div className="row"><a className="text-center repoLink fs-6" href={project.repoLink}> {project.repoLink}</a></div>
-                    <div className="row">
-                        <p className="appDescription">
+                    <div className = "row">
+                    <div className="column"><img class="mx-auto d-block workImage" src={imgMap.get(project.image)}/></div>
+                    <p className="appDescription column">
                             {project.description}
                         </p>
+                    </div>
+                    <div className="row"><a className="text-center repoLink fs-6" href={project.repoLink}> {project.repoLink}</a></div>
+                    <div className="row">
                         <p className="progConcepts"> 
                             <u><strong>Programming Concepts:</strong></u> {project.programmingConcepts}
                         </p>
