@@ -46,9 +46,10 @@ nav {
     background-color: silver;
     padding-top: 3%;
     margin-top: 2%;
-    padding: 1%;
-    font-size: 75%;
+    padding-left: 12%;
+    font-size: 80%;
     text-align: center;
+    word-wrap: break-word;
 }
 
 /*Stylize the "About me" section of the page.*/
@@ -71,23 +72,43 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 75%;  
+    max-width: 100%;  
     font-size: 45%;
 }
 
 .repoLink{
     word-wrap: break-word;
+    max-width: 80%; 
+    margin-left: 12%
 }
 
 .workBox, .appDescription{
     margin-top: 2%;
+    width: 95%;
+    margin-left: 5%;
 }
 
-#appDescription{
+/* #appDescription{
     margin-top: 2%;
+} */
+
+/*Stylize Portfolio section*/
+.prompt{
+    font-size:x-large;
+    font-weight: bold;
+    word-wrap: break-word;
+    margin-left: 6%;
+}
+.appDescription, .progConcepts, .techUsed{
+    font-size:x-large;
+    margin-left: 5%;    
 }
 
 /*Stylize the "Contact me" section of the page.*/
+.form{
+    margin-left:10%
+}
+
 .contactLinks {
     min-width: 100%;
     padding-right: 3%;
@@ -153,5 +174,15 @@ nav {
         font-size: 80%;
         width: fit-content;
         padding: 3%;
+    }
+
+    .workImage{   
+        display: flex;
+        padding: 1%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 40%;  
+        font-size: 45%;
     }
 }
