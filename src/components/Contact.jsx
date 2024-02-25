@@ -15,21 +15,27 @@ function contactForm () {
       const { target } = e;
       const inputType = target.name;
       const inputValue = target.value;
-      console.log(inputType)
-      console.log(inputValue)
-      console.log(contactName)
-      if(inputType != 'contactName' && contactName === ''){
+      if(inputType === 'contactName'){
+        setNameClick(contactNameClick + 1)
+      }
+      if(inputType === 'contactEmail'){
+        setEmailClick(contactEmailClick + 1)
+      }
+      if(inputType === 'contactMessage'){
+        setMessageClick(contactMessageClick + 1)
+      }
+      if(inputType != 'contactName' && contactName === '' && contactNameClick > 0){
         setErrorMessage('You need to provide a name to contact Alex.');
       }
-      if(inputType != 'contactEmail' && contactName === ''){
+      if(inputType != 'contactEmail' && contactEmail === '' && contactEmailClick > 0){
         setErrorMessage('You need to provide an email address to contact Alex.');
       }
-      if(inputType != 'contactMessage' && contactName === ''){
+      if(inputType != 'contactMessage' && contactMessage === '' && contactMessageClick > 0){
         setErrorMessage('You need to provide a message to contact Alex.');
       }
     }
     document.addEventListener('click', checker)
-  }, [])
+  }, [contactNameClick, contactEmailClick, contactMessageClick])
 
   const handleInputChange = (e) => {
     const { target } = e;
