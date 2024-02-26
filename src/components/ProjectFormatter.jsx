@@ -1,3 +1,4 @@
+//Import images for use
 import forecast from '../assets/5-day-Forecast Demo.gif'
 import pwGen from '../assets/Password-Generator-Demo.gif'
 import quiz from '../assets/Responsive Quiz Demo.gif'
@@ -7,8 +8,9 @@ import svg from '../assets/SVG-Logo-Maker.gif'
 import workDay from '../assets/Work Day Scheduler - data entry and retention.gif'
 import worth from '../assets/WorththeWatch.gif'
 
-
-function ProjectFormatter({projects})  {
+//Create a function to process each project object into a renderable item to be displayed
+export default function ProjectFormatter({projects})  {
+    //Create an map to select the proper image for each project
     const imgMap = new Map([
         ['../assets/5-day-Forecast Demo.gif', forecast],
         ['../assets/Password-Generator-Demo.gif', pwGen],
@@ -19,12 +21,18 @@ function ProjectFormatter({projects})  {
         ['../assets/Work Day Scheduler - data entry and retention.gif', workDay],
         ['../assets/WorththeWatch.gif', worth],
     ])
+    //Return what needs to be rendered
     return(
+        //For each project in  a map, process its rendering
         projects.map((project) =>(
+            //Create a section for each project using its unique id
             <section className="row" key={project.id}>
                 <div className="workBox col-md-auto p-2">
+                    {/* Create a title for the project */}
                     <h3 className="text-center" ><u><strong>{project.title}</strong></u></h3>
+                    {/* Display its repo link to GitHub */}
                     <div className="row"><a className="repoLink text-center fs-10 p-1" href={project.repoLink}> {project.repoLink}</a></div>
+                    {/* Create a column to hold its gif, project description, programming concepts and technologies used for it to work */}
                     <div className="col">
                         <img className="workImage img-responsive float-start p-2" src={imgMap.get(project.image)}/>
                         <p className="appDescription fs-10">
@@ -44,5 +52,3 @@ function ProjectFormatter({projects})  {
         ))
     );
 }
-
-export default ProjectFormatter;

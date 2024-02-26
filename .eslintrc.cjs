@@ -1,3 +1,4 @@
+//Provide basic lint options for clarity of code writing
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },

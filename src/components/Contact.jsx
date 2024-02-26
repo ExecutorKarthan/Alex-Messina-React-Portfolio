@@ -1,17 +1,17 @@
+//Import needed modules for functionality
 import { useState, Component, useEffect } from 'react';
 import {validateEmail} from '../utils/validators'
 
-function contactForm () {
-  let [contactName, setName] = useState('');
-  let [contactNameClick, setNameClick] = useState(0);
-  let [contactEmail, setEmail] = useState('');
-  let [contactEmailClick, setEmailClick] = useState(0);
-  let [contactMessage, setMessage] = useState('');
-  let [contactMessageClick, setMessageClick] = useState(0);
-  let [errorMessage, setErrorMessage] = useState('');
+export default function contactForm () {
+  const [contactName, setName] = useState('');
+  const [contactNameClick, setNameClick] = useState(0);
+  const [contactEmail, setEmail] = useState('');
+  const [contactEmailClick, setEmailClick] = useState(0);
+  const [contactMessage, setMessage] = useState('');
+  const [contactMessageClick, setMessageClick] = useState(0);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() =>{
-  
     const checker = (e) =>{
       const { target } = e;
       const inputType = target.name;
@@ -25,6 +25,7 @@ function contactForm () {
       console.log(`The email click is ${contactEmailClick}`)
       console.log(`The contactMessage is ${contactMessage}`)
       console.log(`The message click is ${contactMessageClick}`)
+      console.log(contactName === '')
       if(inputType != 'contactName' && contactName === '' && contactNameClick > 0){
         setErrorMessage('You need to provide a name to contact Alex.');
       }
@@ -38,11 +39,10 @@ function contactForm () {
         setErrorMessage('');
         document.getElementById('submitBtn').classList.remove('disabled')
         document.getElementById('submitBtn').classList.add('enabled')
-        
       }
     }
     document.addEventListener('mousedown', checker)
-  }, [contactName, contactEmail, contactMessage])
+  }, [contactNameClick, contactEmailClick, contactMessageClick])
 
   const handleClickChange = (e) =>{
     console.log('Field clicked')
@@ -80,9 +80,12 @@ function contactForm () {
     }
   };
 
+//Return a formatted html of a submission form
   return(
     <div className="container text-center">
+      {/* Create a form for people to submit a message to me */}
       <form className="form">
+        {/* Create a space for the sender to submit their name */}
         <label className='row'>Name:</label>
         <textarea
           className="form-control"
@@ -93,6 +96,7 @@ function contactForm () {
           type="text"
           placeholder="Your name?"
         />        
+        {/* Create a space for the sender to submit a validated email address */}
         <label className='row'>Email Address</label>
         <textarea
           className="form-control"
@@ -103,6 +107,7 @@ function contactForm () {
           type="email"
           placeholder="What is your email?"
         />
+        {/* Create a space for the user to submit a message to me. */}
         <label className='row'>Message</label>
         <textarea
           className="form-control"
@@ -113,16 +118,15 @@ function contactForm () {
           type="text"
           placeholder="What message would you like to send?"
         />
-        <button id="submitBtn" type="submit" class="btn btn-dark disabled mt-2">Submit</button>
+        {/* Create a button to submit the form */}
+        <button id="submitBtn" type="submit" className="btn btn-dark disabled mt-2">Submit</button>
       </form>
+      {/* Create an error message if something as gone wrong */}
       {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
     </div>
-  )
-      
+  )   
 }
-
-export default contactForm

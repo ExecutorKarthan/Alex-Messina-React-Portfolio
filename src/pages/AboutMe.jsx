@@ -1,6 +1,8 @@
+//Import the image for the homepage
 import JapanSelfie from '../assets/JapanSelfie.png'
 
-function AboutMe () {
+//Create a section talking about me and what I think, including a phot of me.
+export default function AboutMe () {
     return(
         <section className="container-fluid aboutMe">
             <div className="row">
@@ -19,5 +21,3 @@ function AboutMe () {
         </section>
     )
 }
-
-export default AboutMe;

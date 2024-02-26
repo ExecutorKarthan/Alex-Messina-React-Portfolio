@@ -1,12 +1,12 @@
-// Bringing in the required import from 'react-router-dom'
+// Bring in require modules for use, including the stylesheet
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import './styles/stylesheet.css'
 
-function App() {
-  // The Outlet component will conditionally swap between the different pages according to the URL
+export default function App() {
+ //Use the outlet component to swap between pages, but define a constant header, navigation bar and footer
   return (
     <>
       <main>
@@ -18,5 +18,3 @@ function App() {
     </>
   );
 }
-
-export default App;

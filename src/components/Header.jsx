@@ -1,3 +1,4 @@
+//Create a clean header to be displayed on each page of the site
 const Header = () =>{
     return(
         <section className="container-fluid">
@@ -9,4 +10,6 @@ const Header = () =>{
         </section>
     )
 }
+
+//Export the function for use
 export default Header;

@@ -1,3 +1,4 @@
+//Create an array to store all the data for each project as an object for easy access.
 const projects = 
 [
         // {
