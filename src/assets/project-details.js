@@ -47,7 +47,7 @@ const projects =
     {
         id: 1,
         title: `5 Day Forecast`,
-        repoLink:`https://executorkarthan.github.io/5-day-forecast/`,
+        repoLink:`https://github.com/ExecutorKarthan/5-day-forecast`,
         image: `../assets/5-day-Forecast Demo.gif`,
         description: `This is a responsive forecast app that will check the current weather conditions of a searched city. It will also display the forecasted weather 
             conditions in stylized cards below the current day. The app uses local storage to keep track of searched cities, keeping a list of the cities 
