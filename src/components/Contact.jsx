@@ -152,7 +152,7 @@ export default function contactForm () {
           </div>
         )}
         {/* Create a button to submit the form */}
-        <button id="submitBtn" className="btn btn-dark disabled mt-2">Submit</button>
+        <a id="submitBtn" href="/Contact" className="btn btn-dark disabled mt-2">Submit</a>
       </form>
     </div>
   )   
