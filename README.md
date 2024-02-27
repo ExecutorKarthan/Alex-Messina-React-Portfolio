@@ -1,5 +1,5 @@
 # React-Portfolio
-This is a portfolio site I built with React and deployed it to Netlify. It can be viewed here [https://alex-messina-react-portfolio.netlify.app/] (https://alex-messina-react-portfolio.netlify.app/)
+This is a portfolio site I built with React and deployed it to Netlify. It can be viewed here [https://alex-messina-react-portfolio.netlify.app](https://alex-messina-react-portfolio.netlify.app)
 
 ## Description
 This project was an opportunity for me to learn about React and the power of Javascript to create a website. I found how the routing was handled in React, requiring a very simplified process of creating a router variable. From there, a layout could be defined for the site in the App.jsx file, with the Outlet component changing as different routes are selected. Each page could be treated as HTML files that were supported by the Javascript components that could be customized. This made it very simple to render lots of content - all that was needed was for the component to define how the content should look and then be passed the data as a prop.
