@@ -21,6 +21,22 @@ export default function contactForm () {
     message: 'You need to provide a message to contact Alex.',
   }
 
+  const handleSubmit = (e) =>{
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", 
+        name:contactName, 
+        email: contactEmail, 
+        message: contactMessage
+      })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  }
+
   //Create a function to respond if the user clicked off a text field
    const handleClickChange = (e) =>{
     const { target } = e;
@@ -99,7 +115,8 @@ export default function contactForm () {
   return(
     <div className="container text-center">
       {/* Create a form for people to submit a message to me */}
-      <form className="form">
+      <form name="contact" className="form" method="post">
+        <input type="hidden" name="form-name" value="contact" />
         {/* Create a space for the sender to submit their name */}
         <label className='row'>Name:</label>
         <textarea
