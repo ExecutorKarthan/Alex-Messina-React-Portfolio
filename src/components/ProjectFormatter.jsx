@@ -7,11 +7,13 @@ import sqlMan from '../assets/SQL-Manager-Demo.gif'
 import svg from '../assets/SVG-Logo-Maker.gif'
 import workDay from '../assets/Work Day Scheduler - data entry and retention.gif'
 import worth from '../assets/WorththeWatch.gif'
+import bee from '../assets/Bee-porter Demo.gif'
 
 //Create a function to process each project object into a renderable item to be displayed
 export default function ProjectFormatter({projects})  {
     //Create an map to select the proper image for each project
     const imgMap = new Map([
+        [`../assets/Bee-porter Demo.gif`, bee],
         ['../assets/5-day-Forecast Demo.gif', forecast],
         ['../assets/Password-Generator-Demo.gif', pwGen],
         ['../assets/Responsive Quiz Demo.gif', quiz],

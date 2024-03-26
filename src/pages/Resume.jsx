@@ -3,6 +3,7 @@ import ResumePDF from '../assets/ResumeMessinaJAlexander.pdf'
 import { Document, Page} from 'react-pdf';
 import { pdfjs } from 'react-pdf';
 
+
 //Create a worker to process the PDF resume. Note - this code was take directly from the react-pdf site which can be found here: 
 //https://github.com/wojtekmaj/react-pdf#import-worker-recommended
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(

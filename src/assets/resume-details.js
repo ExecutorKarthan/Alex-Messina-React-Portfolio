@@ -1,4 +1,4 @@
-const resume = [
+const resumeData = [
     {
         name: "Alex Messina",
         phone: "314-599-1732",
@@ -9,34 +9,45 @@ const resume = [
         github: "https://github.com/ExecutorKarthan",
     },
     {
-        summary:"Web developer leveraging backgrounds in science and education to provide client focused product        development. Earning a certificate in Full Stack Web Development from Washington University Coding        Bootcamp. Collaborative problem-solver who is passionate about developing robust apps with intuitive user        experiences. Strengths in solution-exploration, teamwork, and seeing projects from inception to live functionality",
-        skills: "Javascript ES6+, Python, Java, HTML5, CSS3, MySQL, Object Oriented Programming, Github, Bootstrap, JQuery, Node, Express, Handlebars"
+        summary:`Highly motivated Jr Web Developer leveraging backgrounds in science and education to provide client focused product development. 
+            Excited to leverage my technical skills and experience to contribute to a mission of developing custom solutions and gaining cutting-edge experience in a dynamic industry.
+            Earned a certificate in Full Stack Web Development from Washington University Coding Bootcamp. Collaborative problem-solver who is passionate about developing robust apps with intuitive user experiences. 
+            Strengths in solution-exploration, teamwork, and seeing projects from inception to live functionality.`,
+        techSkills:{
+            languages: `JavaScript, Java, Python`,
+            architectures: `REST, MERN`,
+            webTechnologies: `HTML, CSS, Bootstrap, JQuery, Node, Express, Handlebars, REACT, Vue, Webpack`, 
+            versionControl: `Git`,
+            tools: `Git, API integration, MySQL, Mongoose, Node.js, GraphQL, Express`, 
+            design: `front-end design, Backend server integration`
+        },
+        softSkills:[`Growth mindset`, `Effective Communication`, `Positive Relationship Building`, `Adaptability`, `Project Management`]
     },
-    {
-        project1:{
+    [
+        {
             title: "Bee-Porter",
             repo: "https://github.com/ExecutorKarthan/Bee-porter",
             summary: "Mobile responsive app that allows users to create accounts and drop pins, notifying logging in users as to the locations of bee swarms",
             role: "Co-Author",
             Tools: "Javascript, Mongoose, CSS, BootStrap, Express, Vite, Render, Bcrypt, React, Apollo/GraphQL, Mapbox API, JWT, Stripe"
         },
-        project2:{
+        {
             title: "Worth the Watch?",
             repo: "https://github.com/ExecutorKarthan/Worth-the-Watch",
             summary: "Mobile responsive app that allows users to view, create and comment on movie reviews",
             role: "Co-Author",
             Tools: "Javascript, HTML, CSS, Bootstrap, Express, Dotenv, Handlebars, Sequelize, Mysql2, Bcrypt, Sessions"
         },
-        project3:{
+        {
             title: "SQL Employee Manager",
             repo: "https://github.com/ExecutorKarthan/SQL-Employee-Manager",
             summary: "Command line app to manage a fictional company’s SQL employee database",
             role: "Sole Author",
             Tools: "Javascript, MySQL, Inquirer, Dotenv, Sequelize"
         },
-    },
-    {
-        job1:{
+    ],
+    [
+       {
             title: "Science Teacher	",
             time: "August 2018 – Present",
             business: "St. Charles High School",
@@ -50,7 +61,7 @@ const resume = [
             "Coordinated with the Microsoft Technology Education and Learning Support (TEALS) program to provide an industry professional to support St. Charles’ newly created computer science program."
             ]
         },
-        job2:{
+        {
             title: "Esports Head Coach",
             time: "August 2021 – Present",
             business: "St. Charles High School",
@@ -61,7 +72,7 @@ const resume = [
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
         },
-        job3:{
+        {
             title: "Esports Head Coach",
             time: "August 2021 – Present",
             business: "St. Charles High School",
@@ -72,7 +83,7 @@ const resume = [
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
         },
-        job4:{
+        {
             title: "Esports Head Coach",
             time: "August 2021 – Present",
             business: "St. Charles High School",
@@ -83,6 +94,40 @@ const resume = [
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
         },
-    }
-
+    ],
+    [
+        {
+            degree: `Certificate of Completion - Coding Boot Camp	`,
+            institution: `Washington University -  St. Louis`,
+        },
+        {
+            degree: `Certified Scrum Master	`,
+            institution: `Scrum Alliance`,
+        },
+        {
+            degree: `Chancellors Certificate in Programming`,
+            institution: `University of Missouri`,
+        },
+        {
+            degree: `PLTW Computer Science A (Java) Certification`,
+            institution: `PLTW Master Teachers`,
+        },
+        {
+            degree: `Master of Education - Learning, Teaching and Curriculum`,
+            institution: `University of Missouri`,
+            location: `Columbia, MO`
+        },
+        {
+            degree: `Master of Science in Forensic Sciences`,
+            institution: `Marshall University Forensic Science Program`,
+            location: `Huntington, WV`
+        },
+        {
+            degree: `Bachelor of Science in Biology`,
+            institution: `University of Missouri`,
+            location: `Columbia, MO`
+        }
+    ]
 ]
+
+export default resumeData;
