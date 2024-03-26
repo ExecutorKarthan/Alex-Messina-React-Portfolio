@@ -10,6 +10,20 @@ const projects =
         //     technologies:``,
         // },
     {
+        id: 8,
+        title: `Bee-porter`,
+        repoLink:`https://github.com/ExecutorKarthan/Bee-porter`,
+        image: `../assets/Bee-porter Demo.gif`,
+        description: `This is a swarm reporting site that my team and I produced as a project. 
+            It will allow a user to drop a pin indicating the presence of a bee swarm on the map, recording the location of the pin, 
+            along with the name and a description of the pin. This data is then saved into a Mongoose database, which is used to 
+            update the map showing where all the current bee swarms are located. This allows current beekeepers to locate and safely relocate 
+            swarms. Users can also create an account with some information about themselves, allowing for the start of a profile page that can
+            be utilized so beekeepers can message each other, comment on the status of swarms as well as track where they picked up swarms.` ,
+        programmingConcepts:`Database design, Responsive Web-Pages, Routing, API Use, Client Side Rendering`,
+        technologies:`HTML, CSS, Bootstrap, Mongoose, Apollo/GraphQL, Bcrypt, React, Express, Mapbox API, Stripe, JWT, Vite`,
+    },
+    {
         id: 7,
         title: `Worth the Watch`,
         repoLink:`https://github.com/ExecutorKarthan/Worth-the-Watch`,

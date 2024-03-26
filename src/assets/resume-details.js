@@ -14,11 +14,11 @@ const resume = [
     },
     {
         project1:{
-            title: "SQL Employee Manager",
-            repo: "https://github.com/ExecutorKarthan/SQL-Employee-Manager",
-            summary: "Command line app to manage a fictional company’s SQL employee database",
-            role: "Sole Author",
-            Tools: "Javascript, MySQL, Inquirer, Dotenv, Sequelize"
+            title: "Bee-Porter",
+            repo: "https://github.com/ExecutorKarthan/Bee-porter",
+            summary: "Mobile responsive app that allows users to create accounts and drop pins, notifying logging in users as to the locations of bee swarms",
+            role: "Co-Author",
+            Tools: "Javascript, Mongoose, CSS, BootStrap, Express, Vite, Render, Bcrypt, React, Apollo/GraphQL, Mapbox API, JWT, Stripe"
         },
         project2:{
             title: "Worth the Watch?",
@@ -28,12 +28,12 @@ const resume = [
             Tools: "Javascript, HTML, CSS, Bootstrap, Express, Dotenv, Handlebars, Sequelize, Mysql2, Bcrypt, Sessions"
         },
         project3:{
-            title: "Sipsync",
-            repo: "https://github.com/ExecutorKarthan/sipsync",
-            summary: " Mobile responsive app that helps the user find food and drink pairings for a meal",
-            role: "Co-Author",
-            Tools: "Javascript, HTML, CSS, Tailwind, The Meal DB API"
-        }
+            title: "SQL Employee Manager",
+            repo: "https://github.com/ExecutorKarthan/SQL-Employee-Manager",
+            summary: "Command line app to manage a fictional company’s SQL employee database",
+            role: "Sole Author",
+            Tools: "Javascript, MySQL, Inquirer, Dotenv, Sequelize"
+        },
     },
     {
         job1:{
