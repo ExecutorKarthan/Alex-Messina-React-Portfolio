@@ -116,64 +116,61 @@ export default function contactForm () {
     <div className="container text-center">
       {/* Create a form for people to submit a message to me */}
       <form name="contact" className="form" method="post">
-        {/*Create a space for the sender to submit a valid name */}
-        <div aria-labelledby='Enter Name Text Box'>
-          <input type="hidden" name="form-name" value="contact" />
-          <label className='row'>Name:</label>
-          <textarea
-            className="form-control"
-            value={contactName}
-            name="contactName"
-            onBlur = {handleClickChange}
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Your name?"
-          />  
-          {/* Display an error if the name input field is blank */}
-          {errorMessage.name && (
-            <div>
-              <p className="error-text">{errorMessage.name}</p>
-            </div>
-          )}      
-        </div>
+        <input type="hidden" name="form-name" value="contact" />
+        {/* Create a space for the sender to submit their name */}
+        <label className='row'>Name:</label>
+        <textarea
+          aria-label='Enter Name Text Box'
+          className="form-control"
+          value={contactName}
+          name="contactName"
+          onBlur = {handleClickChange}
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Your name?"
+        />       
+        {/* Display an error if the name input field is blank */}
+        {errorMessage.name && (
+          <div>
+            <p className="error-text">{errorMessage.name}</p>
+          </div>
+        )} 
         {/* Create a space for the sender to submit a validated email address */}
-        <div aria-labelledby='Enter Email Address Text Box'>
-          <label className='row'>Email Address</label>
-          <textarea
-            className="form-control"
-            value={contactEmail}
-            name="contactEmail"
-            onBlur = {handleClickChange}
-            onChange={handleInputChange}
-            type="email"
-            placeholder="What is your email?"
-          />
-          {/* Display an error if the email input field is blank or the email entered is invalid */}
-          {errorMessage.email && (
-            <div>
-              <p className="error-text">{errorMessage.email}</p>
-            </div>
-          )}
-        </div>
-        <div aria-labelledby='Enter Message Text Box'>
-          {/* Create a space for the user to submit a message to me. */}
-          <label className='row'>Message</label>
-          <textarea
-            className="form-control"
-            value={contactMessage}
-            name="contactMessage"
-            onBlur = {handleClickChange}
-            onChange={handleInputChange}
-            type="text"
-            placeholder="What message would you like to send?"
-          />
-          {/* Display an error if the message input field is blank */}
-          {errorMessage.message && (
-            <div>
-              <p className="error-text">{errorMessage.message}</p>
-            </div>
-          )}
-        </div>
+        <label className='row'>Email Address</label>
+        <textarea
+          aria-label='Enter Email Address Text Box'
+          className="form-control"
+          value={contactEmail}
+          name="contactEmail"
+          onBlur = {handleClickChange}
+          onChange={handleInputChange}
+          type="email"
+          placeholder="What is your email?"
+        />
+        {/* Display an error if the email input field is blank or the email entered is invalid */}
+        {errorMessage.email && (
+          <div>
+            <p className="error-text">{errorMessage.email}</p>
+          </div>
+        )}
+        {/* Create a space for the user to submit a message to me. */}
+        <label className='row'>Message</label>
+        <textarea
+          aria-label='Enter Message Text Box'
+          className="form-control"
+          value={contactMessage}
+          name="contactMessage"
+          onBlur = {handleClickChange}
+          onChange={handleInputChange}
+          type="text"
+          placeholder="What message would you like to send?"
+        />
+        {/* Display an error if the message input field is blank */}
+        {errorMessage.message && (
+          <div>
+            <p className="error-text">{errorMessage.message}</p>
+          </div>
+        )}
         {/* Create a button to submit the form */}
         {/* <a id="submitBtn" className="btn btn-dark disabled mt-2">Submit</a> */}
         <button id="submitBtn" type="submit" className="btn btn-dark disabled mt-2">Submit</button>
