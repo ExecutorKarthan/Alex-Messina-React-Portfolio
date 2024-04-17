@@ -120,6 +120,7 @@ export default function contactForm () {
         {/* Create a space for the sender to submit their name */}
         <label className='row'>Name:</label>
         <textarea
+          aria-labelledby='Enter Name Text Box'
           className="form-control"
           value={contactName}
           name="contactName"
@@ -137,6 +138,7 @@ export default function contactForm () {
         {/* Create a space for the sender to submit a validated email address */}
         <label className='row'>Email Address</label>
         <textarea
+          aria-labelledby='Enter Email Address Text Box'
           className="form-control"
           value={contactEmail}
           name="contactEmail"
@@ -154,6 +156,7 @@ export default function contactForm () {
         {/* Create a space for the user to submit a message to me. */}
         <label className='row'>Message</label>
         <textarea
+          aria-labelledby='Enter Message Text Box'
           className="form-control"
           value={contactMessage}
           name="contactMessage"
