@@ -20,8 +20,8 @@ const projects =
             executed. The animation has several components to it, including: creating a ring of dots (photons) that move out from a point of origin, 
             calculating which photons will collide with the collimator, calculating which photons will hit the detector, changing photon colors based
             on what they hit and updating a variable so if photons hit the detector the image appears. ` ,
-        programmingConcepts:`Database design, Responsive Web-Pages, Routing, API Use, Client Side Rendering`,
-        technologies:` TypeScript, CSS, And-Design, Konva, Vite, React`,
+        programmingConcepts:`Front-end Design, Mobile-Responsive Design, Web Animation with Konva, Type-safe coding`,
+        technologies:` TypeScript, CSS, Ant-Design, Konva, Vite, React`,
     },
         {    
         id: 8,
