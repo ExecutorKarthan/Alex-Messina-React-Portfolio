@@ -47,13 +47,23 @@ const resumeData = [
         },
     ],
     [
+        {
+            title: "Teacher Researcher ",
+            time: "June 2024 - August 2024",
+            business: "Washington University",
+            location: "St. Louis, MO",
+            accomplishments: ["Built virtual interactive simulation to support student learning the fundamentals of medical imaging.", 
+            "Constructed a doll model to illustrate radiotracer injection and photon emission.",
+            "Authored companion lessons for students to explore medical imaging concepts.",
+            ]
+        },
        {
             title: "Science Teacher	",
             time: "August 2018 – Present",
             business: "St. Charles High School",
             location: "St. Charles, MO",
-            summary: "Supported students from a variety of backgrounds in multiple levels of chemistry and computer science coursework.",
-            accomplishments: ["Developed a Google Apps Script that was adopted by the school to coordinate student flow from homeroom to other locations.",
+            accomplishments: ["Supported students from a variety of backgrounds in multiple levels of chemistry and computer science coursework.", 
+            "Developed a Google Apps Script that was adopted by the school to coordinate student flow from homeroom to other locations.",
             "Helped guide and implement building-level decisions by serving on the Shared Leadership Committee.",
             "Supported colleagues by hosting professional development presentations and book clubs.",
             "Introduced a material science-based chemistry curriculum to promote student interest and success.",
@@ -66,8 +76,8 @@ const resumeData = [
             time: "August 2021 – Present",
             business: "St. Charles High School",
             location: "St. Charles, MO",
-            summary: "Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
-            accomplishments: ["Created and managed the first-ever esports team in St. Charles School District History.",
+            accomplishments: ["Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
+            "Created and managed the first-ever esports team in St. Charles School District History.",
             "Organized the first live Esports tournament hosted by a public high school in St. Charles County.",
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
@@ -77,8 +87,8 @@ const resumeData = [
             time: "August 2021 – Present",
             business: "St. Charles High School",
             location: "St. Charles, MO",
-            summary: "Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
-            accomplishments: ["Created and managed the first-ever esports team in St. Charles School District History.",
+            accomplishments: ["Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
+            "Created and managed the first-ever esports team in St. Charles School District History.",
             "Organized the first live Esports tournament hosted by a public high school in St. Charles County.",
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
@@ -88,8 +98,8 @@ const resumeData = [
             time: "August 2021 – Present",
             business: "St. Charles High School",
             location: "St. Charles, MO",
-            summary: "Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
-            accomplishments: ["Created and managed the first-ever esports team in St. Charles School District History.",
+            accomplishments: ["Build and maintain a competitive esports team with a focus on developing student-athletes in a positive, accepting environment.",
+            "Created and managed the first-ever esports team in St. Charles School District History.",
             "Organized the first live Esports tournament hosted by a public high school in St. Charles County.",
             "Coached state-qualifying Smash Bros and Halo teams.",
             ]
@@ -105,11 +115,11 @@ const resumeData = [
             institution: `Scrum Alliance`,
         },
         {
-            degree: `Chancellors Certificate in Programming`,
+            degree: `Chancellors Certificate in Programming in Java & Python`,
             institution: `University of Missouri`,
         },
         {
-            degree: `PLTW Computer Science A (Java) Certification`,
+            degree: `Java Certification of Completion`,
             institution: `PLTW Master Teachers`,
         },
         {

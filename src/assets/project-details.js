@@ -9,7 +9,21 @@ const projects =
         //     programmingConcepts:``,
         //     technologies:``,
         // },
-    {
+    {    
+        id: 9,
+        title: `Medical imaging Simulation`,
+        repoLink:`https://medical-imaging-simulator.netlify.app/ `,
+        image: `../assets/Medical-Imaging-Sim Demo.gif`,
+        description: `This is a mobile responsive app that simulates how a medical imaging machine collects photons from a radiotracer 
+            and creates an image from the tracer signal. This app lets users adjust collimator depth, width and radiotracer 
+            dosage to observe their effects on image quality. Once the user sets all the simulated machine's parameters, an animation is build and
+            executed. The animation has several components to it, including: creating a ring of dots (photons) that move out from a point of origin, 
+            calculating which photons will collide with the collimator, calculating which photons will hit the detector, changing photon colors based
+            on what they hit and updating a variable so if photons hit the detector the image appears. ` ,
+        programmingConcepts:`Database design, Responsive Web-Pages, Routing, API Use, Client Side Rendering`,
+        technologies:` TypeScript, CSS, And-Design, Konva, Vite, React`,
+    },
+        {    
         id: 8,
         title: `Bee-porter`,
         repoLink:`https://github.com/ExecutorKarthan/Bee-porter`,

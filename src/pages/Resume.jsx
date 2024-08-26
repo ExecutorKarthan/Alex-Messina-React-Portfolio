@@ -29,6 +29,8 @@ export default function viewPDF() {
       <div style={resumeDivStyle}>
         <Document file={ResumePDF} >
           <Page pageNumber={1} renderAnnotationLayer={false} renderTextLayer={false} wrap={true}/>
+        </Document>
+        <Document file={ResumePDF} >
           <Page pageNumber={2} renderAnnotationLayer={false} renderTextLayer={false} wrap={true}/>
         </Document>
       </div>
