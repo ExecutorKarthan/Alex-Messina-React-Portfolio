@@ -9,21 +9,35 @@ const resumeData = [
         github: "https://github.com/ExecutorKarthan",
     },
     {
-        summary:`Highly motivated Jr Web Developer leveraging backgrounds in science and education to provide client focused product development. 
-            Excited to leverage my technical skills and experience to contribute to a mission of developing custom solutions and gaining cutting-edge experience in a dynamic industry.
-            Earned a certificate in Full Stack Web Development from Washington University Coding Bootcamp. Collaborative problem-solver who is passionate about developing robust apps with intuitive user experiences. 
-            Strengths in solution-exploration, teamwork, and seeing projects from inception to live functionality.`,
+        summary:`With a background in JavaScript, Python, and simulation-focused development, I design interactive, real-world modeling applications using technologies like React, Node.js, and Django. 
+                    I’ve built full-stack projects such as a large language model explorer and a swarm-tracking app, demonstrating my ability to architect and deploy complex systems. 
+                    My experience as an educator and esports coach has strengthened my ability to collaborate, communicate across disciplines, and lead teams toward shared goals. 
+                    I’m eager to further develop and expand my skills while contributing to projects.`,
         techSkills:{
-            languages: `JavaScript, Java, Python`,
+            languages: `JavaScript, Java, Python, TypeScript`,
             architectures: `REST, MERN`,
-            webTechnologies: `HTML, CSS, Bootstrap, JQuery, Node, Express, Handlebars, REACT, Vue, Webpack`, 
-            versionControl: `Git`,
-            tools: `Git, API integration, MySQL, Mongoose, Node.js, GraphQL, Express`, 
-            design: `front-end design, Backend server integration`
+            webTechnologies: `HTML, CSS, Bootstrap, Node.js, Express, Handlebars, React, WebPack, Konva, Django`, 
+            Databases: `MySQL, Mongoose, Sequelize`,
+            tools: `Git, API integration, GraphQL, JWT, Bcrypt, Dotenv`, 
+            design: `Front-end design, back-end integration, full-stack deployment`
         },
         softSkills:[`Growth mindset`, `Effective Communication`, `Positive Relationship Building`, `Adaptability`, `Project Management`]
     },
     [
+        {
+            title: "Large Language Model (LLM) Explorer",
+            repo: "https://github.com/ExecutorKarthan/LLM-Web-App",
+            summary: "Mobile responsive educational app that allows users to explore prompt engineering with the Gemini LLM through solving pre-defined mazes generated using Python’s Turtle module",
+            role: "Author",
+            Tools: "TypeScript, Ant-Design, Vite, React, Django, Gemini, Dotenv, Tokenization, Monaco, Skulpt"
+        },
+        {
+            title: "Medical imaging Simulation",
+            repo: "https://medical-imaging-simulator.netlify.app",
+            summary: "Mobile responsive app that simulates how a medical imaging machine collects photons from a radiotracer and creates an image from the tracer signal. This app lets users adjust collimator depth, width and radiotracer dosage to observe their effects on image quality",
+            role: "Author",
+            Tools: "TypeScript, CSS, Ant-Design, Konva, Vite, React"
+        },
         {
             title: "Bee-Porter",
             repo: "https://github.com/ExecutorKarthan/Bee-porter",
@@ -47,6 +61,15 @@ const resumeData = [
         },
     ],
     [
+        {
+            title: "Teacher Researcher ",
+            time: "June 20258 - August 2025",
+            business: "Washington University",
+            location: "St. Louis, MO",
+            accomplishments: ["Built virtual interactive simulation to support student introductions to Large Language Models (LLM).", 
+            "Authored companion lessons for students to explore LLM limitations, costs/benefits and prompt engineering.",
+            ]
+        },
         {
             title: "Teacher Researcher ",
             time: "June 2024 - August 2024",

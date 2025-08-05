@@ -10,6 +10,19 @@ const projects =
         //     technologies:``,
         // },
     {    
+        id: 10,
+        title: `Gemini Large Language Model (LLM) Explorer`,
+        repoLink:`https://github.com/ExecutorKarthan/LLM-Web-App `,
+        image: `../assets/LLM-Explorer.gif`,
+        description: `Mobile responsive educational app that allows users to explore prompt engineering with the Gemini LLM through solving pre-defined 
+            mazes generated using Python’s Turtle module. The user must agree to the terms and conditions and then submit an API key to move past the
+            splashgate and to the main app. The user's API is sent to the Django backend where it is tokenized for security purposes. Once in the main
+            app, the user can query the Gemini LLM as a resource to develop Python code to solve the pre-defined mazes. Once the LLM generates the code,
+            it can be copied to the Monaco web editor and then run using the Skulpt display. ` ,
+        programmingConcepts:`Front-end Design, Mobile-Responsive Design, Routing, API Use, Prompt Engineering`,
+        technologies:` TypeScript, CSS, Ant-Design, Vite, React, Django, Gemini, Dotenv, Tokenization, Monaco, Skulpt`,
+    },
+    {    
         id: 9,
         title: `Medical imaging Simulation`,
         repoLink:`https://medical-imaging-simulator.netlify.app/ `,
