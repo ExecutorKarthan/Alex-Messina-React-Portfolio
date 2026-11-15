@@ -1,20 +1,21 @@
-// Bring in require modules for use, including the stylesheet
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
-import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import './styles/stylesheet.css'
+import content from './content';
 
 export default function App() {
- //Use the outlet component to swap between pages, but define a constant header, navigation bar and footer
+  useEffect(() => {
+    document.title = content.site.title;
+  }, []);
+
   return (
-    <>
-      <main>
-        <Header />
-        <Navigation />
+    <div className="flex min-h-screen flex-col bg-page text-slate-800">
+      <Header />
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
         <Outlet />
-        <Footer/> 
-      </main> 
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }

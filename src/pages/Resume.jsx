@@ -1,39 +1,39 @@
-//Import the needed modules
 import ResumePDF from '../assets/ResumeMessinaJAlexander.pdf'
-import { Document, Page} from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 
-
-//Create a worker to process the PDF resume. Note - this code was take directly from the react-pdf site which can be found here: 
-//https://github.com/wojtekmaj/react-pdf#import-worker-recommended
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
   import.meta.url,
 ).toString();
 
-//Stylize the resume to be more appealing
-const resumeDivStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-}
+export default function Resume() {
+  const pageWidth = Math.min(window.innerWidth - 32, 700)
 
-//Display the resume page
-export default function viewPDF() {
   return (
-    <div>
-      {/* Create a link to download my resume */}
-      <div className='text-center'>
-        <a href= {ResumePDF} download="Resume- J Alexander Messina"> <button className="btn btn-dark enabled mt-2 mb-2 btn-sm">Download .pdf file</button></a>
+    <section>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-3xl font-semibold text-slate-900">Resume</h1>
+        <a
+          href={ResumePDF}
+          download="Resume- J Alexander Messina"
+          className="rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
+        >
+          Download PDF
+        </a>
       </div>
-      {/* Display the resume in an easily readable way */}
-      <div style={resumeDivStyle}>
-        <Document file={ResumePDF} >
-          <Page pageNumber={1} renderAnnotationLayer={false} renderTextLayer={false} wrap={true}/>
-        </Document>
-        <Document file={ResumePDF} >
-          <Page pageNumber={2} renderAnnotationLayer={false} renderTextLayer={false} wrap={true}/>
-        </Document>
+      <div className="flex flex-col items-center gap-6">
+        {[1, 2].map((pageNumber) => (
+          <Document key={pageNumber} file={ResumePDF}>
+            <Page
+              pageNumber={pageNumber}
+              width={pageWidth}
+              renderAnnotationLayer={false}
+              renderTextLayer={false}
+              className="shadow-md"
+            />
+          </Document>
+        ))}
       </div>
-    </div>
-  );
+    </section>
+  )
 }

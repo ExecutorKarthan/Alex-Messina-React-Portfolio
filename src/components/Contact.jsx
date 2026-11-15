@@ -1,180 +1,109 @@
-//Import needed modules for functionality
-import {useState} from 'react';
-import {validateEmail} from '../utils/validators'
+import { useState } from 'react';
+import { validateEmail } from '../utils/validators';
 
-//Create logic to handle the form submission
-export default function contactForm () {
-  //Define a set of state variables that can be updated
-  const [contactName, setName] = useState('');
-  const [contactEmail, setEmail] = useState('');
-  const [contactMessage, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState({
-    name: '',
-    email: '',
-    message:'',
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
+const emptyForm = { name: '', email: '', message: '' };
+const noneTouched = { name: false, email: false, message: false };
+
+const errorText = {
+  name: 'You need to provide a name to contact Alex.',
+  email: 'You need to provide a valid email to contact Alex.',
+  message: 'You need to provide a message to contact Alex.',
+};
+
+const validate = (values) => ({
+  name: values.name.trim() === '' ? errorText.name : '',
+  email: validateEmail(values.email) ? '' : errorText.email,
+  message: values.message.trim() === '' ? errorText.message : '',
 });
 
-  //Define the possible errors the form can throw
-  const possibleErrors = {
-    name: 'You need to provide a name to contact Alex.',
-    email: 'You need to provide a valid email to contact Alex.',
-    message: 'You need to provide a message to contact Alex.',
-  }
+const fieldClass =
+  'mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600';
 
-  const handleSubmit = (e) =>{
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", 
-        name:contactName, 
-        email: contactEmail, 
-        message: contactMessage
-      })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
+export default function ContactForm() {
+  const [values, setValues] = useState(emptyForm);
+  const [touched, setTouched] = useState(noneTouched);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
+  const errors = validate(values);
+  const isValid = Object.values(errors).every((message) => message === '');
+
+  const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
+  const handleBlur = (e) => setTouched({ ...touched, [e.target.name]: true });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
-
-  //Create a function to respond if the user clicked off a text field
-   const handleClickChange = (e) =>{
-    const { target } = e;
-    const inputType = target.name;
-    //If the user clicked away from the name input field and it is blank, fill in an error to be read
-    if (inputType === 'contactName' && contactName === '' ){
-      setErrorMessage({
-        name: possibleErrors.name,
-        email: errorMessage.email,
-        message: errorMessage.message,
+    if (!isValid) return;
+    setStatus('sending');
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...values }),
       });
-    }
-    //If the user clicked away from the email input field and it is blank, fill in an error to be read
-    if (inputType === 'contactEmail' && !validateEmail(contactEmail)){
-      setErrorMessage({
-        name: errorMessage.name,
-        email: possibleErrors.email,
-        message: errorMessage.message,
-      });
-    }
-    //If the user clicked away from the message input field and it is blank, fill in an error to be read
-    if (inputType === 'contactMessage' && contactMessage === ''){
-      setErrorMessage({
-        name: errorMessage.name,
-        email: errorMessage.email,
-        message: possibleErrors.message,
-      });
-    }
-    //Assuming there are no errors, the email is valid and there is data in the contact and name fields, change the button to enabled
-    if(errorMessage.name === ''  && errorMessage.email === '' && errorMessage.email === '' && contactName != "" && validateEmail(contactEmail) && contactMessage != ""){
-      document.getElementById('submitBtn').classList.remove('disabled')
-      document.getElementById('submitBtn').classList.add('enabled')
-    }
-    //If there are errors, disable the submission button
-    else{
-      document.getElementById('submitBtn').classList.add('disabled')
-      document.getElementById('submitBtn').classList.remove('enabled')
-    }
-  }
-
-  //Create a function to respond to typed text
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-    //If the contact name field was adjusted, update the state variable and blank out the corresponding error message
-    if (inputType === 'contactName'){
-      setName(inputValue)
-      setErrorMessage({
-        name: '',
-        email: errorMessage.email,
-        message: errorMessage.message,
-      });
-    }
-    //If the contact email field was adjusted, update the state variable and blank out the corresponding error message
-    if (inputType === 'contactEmail'){
-      setEmail(inputValue)
-      setErrorMessage({
-        name: errorMessage.name,
-        email: '',
-        message: errorMessage.message,
-      });
-    }
-    //If the contact message field was adjusted, update the state variable and blank out the corresponding error message
-    if (inputType === 'contactMessage'){
-      setMessage(inputValue)
-      setErrorMessage({
-        name: errorMessage.name,
-        email: errorMessage.email,
-        message: '',
-      });
+      if (!response.ok) throw new Error(`Status ${response.status}`);
+      setValues(emptyForm);
+      setTouched(noneTouched);
+      setStatus('sent');
+    } catch {
+      setStatus('error');
     }
   };
 
-//Return a formatted html of a submission form
-  return(
-    <div className="container text-center">
-      {/* Create a form for people to submit a message to me */}
-      <form name="contact" className="form" method="post">
-        <input type="hidden" name="form-name" value="contact" />
-        {/* Create a space for the sender to submit their name */}
-        <label className='row'>Name:</label>
-        <textarea
-          aria-label='Enter Name Text Box'
-          className="form-control"
-          value={contactName}
-          name="contactName"
-          onBlur = {handleClickChange}
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Your name?"
-        />       
-        {/* Display an error if the name input field is blank */}
-        {errorMessage.name && (
-          <div>
-            <p className="error-text">{errorMessage.name}</p>
-          </div>
-        )} 
-        {/* Create a space for the sender to submit a validated email address */}
-        <label className='row'>Email Address</label>
-        <textarea
-          aria-label='Enter Email Address Text Box'
-          className="form-control"
-          value={contactEmail}
-          name="contactEmail"
-          onBlur = {handleClickChange}
-          onChange={handleInputChange}
-          type="email"
-          placeholder="What is your email?"
-        />
-        {/* Display an error if the email input field is blank or the email entered is invalid */}
-        {errorMessage.email && (
-          <div>
-            <p className="error-text">{errorMessage.email}</p>
-          </div>
+  return (
+    <section className="mx-auto max-w-xl">
+      <h1 className="mb-6 text-3xl font-semibold text-slate-900">Contact Me</h1>
+      <form
+        name="contact"
+        onSubmit={handleSubmit}
+        noValidate
+        className="space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+      >
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-slate-700">Name</label>
+          <input
+            id="name" name="name" type="text" className={fieldClass}
+            value={values.name} onChange={handleChange} onBlur={handleBlur}
+            placeholder="Your name"
+          />
+          {touched.name && errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email address</label>
+          <input
+            id="email" name="email" type="email" className={fieldClass}
+            value={values.email} onChange={handleChange} onBlur={handleBlur}
+            placeholder="you@example.com"
+          />
+          {touched.email && errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-slate-700">Message</label>
+          <textarea
+            id="message" name="message" rows={5} className={fieldClass}
+            value={values.message} onChange={handleChange} onBlur={handleBlur}
+            placeholder="What would you like to say?"
+          />
+          {touched.message && errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
+        </div>
+        <button
+          type="submit"
+          disabled={!isValid || status === 'sending'}
+          className="rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {status === 'sending' ? 'Sending...' : 'Send message'}
+        </button>
+        {status === 'sent' && <p className="text-sm text-green-700">Thanks, your message was sent.</p>}
+        {status === 'error' && (
+          <p className="text-sm text-red-600">
+            Something went wrong. You can email me directly at me@alexmessina.dev.
+          </p>
         )}
-        {/* Create a space for the user to submit a message to me. */}
-        <label className='row'>Message</label>
-        <textarea
-          aria-label='Enter Message Text Box'
-          className="form-control"
-          value={contactMessage}
-          name="contactMessage"
-          onBlur = {handleClickChange}
-          onChange={handleInputChange}
-          type="text"
-          placeholder="What message would you like to send?"
-        />
-        {/* Display an error if the message input field is blank */}
-        {errorMessage.message && (
-          <div>
-            <p className="error-text">{errorMessage.message}</p>
-          </div>
-        )}
-        {/* Create a button to submit the form */}
-        {/* <a id="submitBtn" className="btn btn-dark disabled mt-2">Submit</a> */}
-        <button id="submitBtn" type="submit" className="btn btn-dark disabled mt-2">Submit</button>
       </form>
-    </div>
-  )   
+    </section>
+  );
 }

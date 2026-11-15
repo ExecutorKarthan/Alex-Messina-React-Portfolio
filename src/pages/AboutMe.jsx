@@ -1,29 +1,71 @@
-//Import the image for the homepage
 import JapanSelfie from '../assets/JapanSelfie.png'
+import Card from '../components/Card'
+import content from '../content'
 
-//Create a section talking about me and what I think, including a phot of me.
-export default function AboutMe () {
-    return(
-        <section className="container-fluid aboutMe">
-            <div className="row">
-                <h2 className ="text-center h1" id="aboutMe"> About me</h2>
-                <p className="text-wrap" id="meParagraph">             
-                    <img className="float-end" id="profilePic" src={JapanSelfie} alt="This is a photo of a man in a blue kimono surrounded by hanging japanese flowers."></img>       
-                    <p>
-                    Hello! My name is Alex Messina and I am an inquisitive, life-long learner that enjoys exploring challenges.
-                    I am a firm believer in honest self-reflection as a path to improvement and view criticism as an opportunity to engage in that 
-                    self-reflection. I think that collaboration is the ideal tool to produce the best quality product as it allows for a larger body 
-                    of knowledge and unique perspectives to be applied to the problem in question. 
-                    </p>
-                    <p>
-                    I tend to spend my free time programming to help someone make a repetitive, tedious task doable faster. I recently completed my Web Developer 
-                    Boot Camp through Washington University - St. Louis and completed an internship with Washington University Medical School's medical imaging laboratory.
-                    My internship focused on building educational materials, such as a responsive web app, to make medical imaging concepts more accessible to middle and
-                    high school students. You can see more of my projects, where I have leveraged my computer science and web design skills on my GithHub page. 
-                    </p>
-                    If you have any questions for me, you can contact me via email or use the contact form on my website. 
-                </p>
+const { heading, photoAlt, bio, experience, education, skills } = content.about
+
+export default function AboutMe() {
+  return (
+    <section className="space-y-6">
+      <h1 className="text-3xl font-semibold text-navy-900">{heading}</h1>
+
+      <Card>
+        <img
+          className="float-right mb-4 ml-6 w-40 rounded-lg shadow sm:w-64"
+          src={JapanSelfie}
+          alt={photoAlt}
+        />
+        <div className="space-y-4 text-lg leading-relaxed text-slate-700">
+          {bio.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="clear-both" />
+      </Card>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card title="Experience">
+          <ul className="space-y-5">
+            {experience.map(({ role, org, dates, summary }) => (
+              <li key={`${role}-${org}`}>
+                <p className="font-semibold text-slate-900">{role}</p>
+                <p className="text-sm text-brand-700">{org}</p>
+                {dates && <p className="text-sm text-slate-500">{dates}</p>}
+                {summary && <p className="mt-1 text-slate-700">{summary}</p>}
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        <Card title="Education">
+          <ul className="space-y-5">
+            {education.map(({ school, program, dates }) => (
+              <li key={`${school}-${program}`}>
+                <p className="font-semibold text-slate-900">{program}</p>
+                <p className="text-sm text-brand-700">{school}</p>
+                {dates && <p className="text-sm text-slate-500">{dates}</p>}
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </div>
+
+      <Card title="Skills">
+        <div className="space-y-4">
+          {Object.entries(skills).map(([group, items]) => (
+            <div key={group}>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">{group}</p>
+              <ul className="flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <li key={item} className="rounded-full bg-brand-50 px-3 py-1 text-sm font-medium text-brand-700">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </Card>
+    </section>
+  )
 }
