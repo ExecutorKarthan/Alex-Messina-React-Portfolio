@@ -1,11 +1,7 @@
 import { NavLink } from 'react-router-dom';
+import content from '../content';
 
-const links = [
-  { to: '/AboutMe', label: 'About' },
-  { to: '/Resources', label: 'Resources' },
-  { to: '/Portfolio', label: 'Projects' },
-  { to: '/Contact', label: 'Contact' },
-];
+const { site, nav } = content;
 
 const linkClass = ({ isActive }) =>
   `rounded-md px-3 py-2 text-sm font-medium transition-colors ${
@@ -19,11 +15,11 @@ export default function Header() {
     <header className="sticky top-0 z-10 border-b-4 border-accent-500 bg-navy-900">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-3">
         <NavLink to="/" className="text-lg font-semibold text-white">
-          J. Alexander Messina{' '}
-          <span className="text-sm font-normal text-blue-200">(He/Him)</span>
+          {site.name}{' '}
+          <span className="text-sm font-normal text-blue-200">({site.pronouns})</span>
         </NavLink>
         <nav aria-label="Main" className="flex flex-wrap items-center gap-1">
-          {links.map(({ to, label }) => (
+          {nav.map(({ to, label }) => (
             <NavLink key={to} to={to} className={linkClass}>
               {label}
             </NavLink>

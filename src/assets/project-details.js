@@ -10,6 +10,18 @@ const projects =
         //     technologies:``,
         // },
     {    
+        id: 11,
+        title: `Metal Organic Framework (MOF) Explorer`,
+        repoLink:`https://github.com/ExecutorKarthan/Chem-LLM-Web-App `,
+        image: `../assets/LLM-Chem.gif`,
+        description: `Mobile-responsive educational app for educators and students that teaches Large Language Model fundamentals by having users visualize 
+            and interact with tokenization, transformer logic, and metal-organic framework (MOF) guest-ion structures. Users pass a splashgate by entering a 
+            Gemini API key, which is handled securely by a Django backend to manage tokenization and provide multi-model fallback loops for limit or availability errors.
+            In the main application, users query Gemini to examine structural properties and explore the benefits and limits of LLMs in a research setting`,
+        programmingConcepts:`Front-end Design, Mobile-Responsive Design, Routing, API Use, Prompt Engineering`,
+        technologies:` TypeScript, CSS, Ant-Design, Vite, React, Django, Gemini, Dotenv, Tokenization, RDKit, Skulpt`,
+    },
+    {    
         id: 10,
         title: `Gemini Large Language Model (LLM) Explorer`,
         repoLink:`https://github.com/ExecutorKarthan/LLM-Web-App `,
@@ -121,7 +133,7 @@ const projects =
         id: 1,
         title: `AIP Manager`,
         repoLink:`https://github.com/ExecutorKarthan/AIP-Manager`,
-        image: `No GUI Made`,
+        image: `../assets/No-Image.jpg`,
         description: `This is a series of scripts I wrote to help a friend of mine with his Google Sheet project. At the school we worked at, students were
         allowed to travel between teacher's rooms during Academic Intervention Period (AIP). My colleague of developed a system of Google sheets so it would
         be easier for students and teachers to know where they need to report to. I knew that maintaining these Google sheets was a tedious, 
@@ -136,7 +148,7 @@ const projects =
         id: 0,
         title: `Dividend Stock Screener`,
         repoLink:`https://github.com/ExecutorKarthan/Dividend-Stock-Screener`,
-        image: `No GUI Made`,
+        image: `../assets/No-Image.jpg`,
         description: `This is a stock screener that I developed early in my early programming days. It uses a yahoo finance API to get stock data and save it
         to a Postgres database. From this data, I can screen stocks based on several criteria, namely dividend yield. This is the very first major passion 
         project I embarked on. This project is functional, but will receive a major overhaul in the future as it has no front end and I think it can be 

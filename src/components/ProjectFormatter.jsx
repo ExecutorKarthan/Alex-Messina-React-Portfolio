@@ -1,3 +1,4 @@
+import HTML from '../assets/fullPageLayout1.png'
 import forecast from '../assets/5-day-Forecast Demo.gif'
 import pwGen from '../assets/Password-Generator-Demo.gif'
 import quiz from '../assets/Responsive Quiz Demo.gif'
@@ -9,8 +10,11 @@ import worth from '../assets/WorththeWatch.gif'
 import bee from '../assets/Bee-porter Demo.gif'
 import mis from '../assets/Medical-Imaging-Sim Demo.gif'
 import llm from '../assets/LLM-Explorer.gif'
+import chem from '../assets/LLM-Chem.gif'
+import noIm from '../assets/No-Image.jpg'
 
 const imgMap = new Map([
+  ['../assets/LLM-Chem.gif', chem],
   ['../assets/LLM-Explorer.gif', llm],
   ['../assets/Medical-Imaging-Sim Demo.gif', mis],
   ['../assets/Bee-porter Demo.gif', bee],
@@ -22,6 +26,9 @@ const imgMap = new Map([
   ['../assets/SVG-Logo-Maker.gif', svg],
   ['../assets/Work Day Scheduler - data entry and retention.gif', workDay],
   ['../assets/WorththeWatch.gif', worth],
+  ['../assets/fullPageLayout1.png', HTML],
+  ['../assets/No-Image.jpg', noIm],
+  ['../assets/No-Image.jpg', noIm],
 ])
 
 export default function ProjectFormatter({ projects }) {

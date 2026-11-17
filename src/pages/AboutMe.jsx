@@ -1,8 +1,30 @@
-import JapanSelfie from '../assets/JapanSelfie.png'
+import HeadShot from '../assets/Headshot.jpg'
 import Card from '../components/Card'
+import ExpandableCard from '../components/ExpandableCard'
 import content from '../content'
 
-const { heading, photoAlt, bio, experience, education, skills } = content.about
+const { heading, photoAlt, bio, sections } = content.about
+
+function Entry({ heading, subheading, location, dates, text, bullets }) {
+  const meta = [subheading, location].filter(Boolean).join(' · ')
+  return (
+    <li className="py-5 first:pt-0 last:pb-0">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+        <h3 className="font-semibold text-slate-900">{heading}</h3>
+        {dates && <p className="shrink-0 text-sm font-medium text-slate-500">{dates}</p>}
+      </div>
+      {meta && <p className="text-sm text-brand-700">{meta}</p>}
+      {text && <p className="mt-2 text-slate-700">{text}</p>}
+      {bullets && bullets.length > 0 && (
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700">
+          {bullets.map((bullet, index) => (
+            <li key={index}>{bullet}</li>
+          ))}
+        </ul>
+      )}
+    </li>
+  )
+}
 
 export default function AboutMe() {
   return (
@@ -12,7 +34,7 @@ export default function AboutMe() {
       <Card>
         <img
           className="float-right mb-4 ml-6 w-40 rounded-lg shadow sm:w-64"
-          src={JapanSelfie}
+          src={HeadShot}
           alt={photoAlt}
         />
         <div className="space-y-4 text-lg leading-relaxed text-slate-700">
@@ -23,49 +45,15 @@ export default function AboutMe() {
         <div className="clear-both" />
       </Card>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card title="Experience">
-          <ul className="space-y-5">
-            {experience.map(({ role, org, dates, summary }) => (
-              <li key={`${role}-${org}`}>
-                <p className="font-semibold text-slate-900">{role}</p>
-                <p className="text-sm text-brand-700">{org}</p>
-                {dates && <p className="text-sm text-slate-500">{dates}</p>}
-                {summary && <p className="mt-1 text-slate-700">{summary}</p>}
-              </li>
+      {sections.map(({ title, blurb, entries }) => (
+        <ExpandableCard key={title} title={title} blurb={blurb}>
+          <ul className="divide-y divide-slate-200">
+            {entries.map((entry) => (
+              <Entry key={`${entry.heading}-${entry.dates || ''}`} {...entry} />
             ))}
           </ul>
-        </Card>
-
-        <Card title="Education">
-          <ul className="space-y-5">
-            {education.map(({ school, program, dates }) => (
-              <li key={`${school}-${program}`}>
-                <p className="font-semibold text-slate-900">{program}</p>
-                <p className="text-sm text-brand-700">{school}</p>
-                {dates && <p className="text-sm text-slate-500">{dates}</p>}
-              </li>
-            ))}
-          </ul>
-        </Card>
-      </div>
-
-      <Card title="Skills">
-        <div className="space-y-4">
-          {Object.entries(skills).map(([group, items]) => (
-            <div key={group}>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">{group}</p>
-              <ul className="flex flex-wrap gap-2">
-                {items.map((item) => (
-                  <li key={item} className="rounded-full bg-brand-50 px-3 py-1 text-sm font-medium text-brand-700">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Card>
+        </ExpandableCard>
+      ))}
     </section>
   )
 }

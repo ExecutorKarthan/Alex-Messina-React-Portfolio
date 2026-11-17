@@ -1,11 +1,14 @@
-import email from '../assets/email image.png';
+import emailIcon from '../assets/email image.png';
 import GitHub from '../assets/github-icon-design-vector-png_115671.png';
 import linkedIn from '../assets/linkedInIcon.png';
+import content from '../content';
+
+const { email, githubUrl, linkedinUrl } = content.site;
 
 const contacts = [
-  { href: 'mailto:me@alexmessina.dev', icon: email, label: 'me@alexmessina.dev' },
-  { href: 'https://github.com/ExecutorKarthan', icon: GitHub, label: 'GitHub' },
-  { href: 'https://www.linkedin.com/in/joseph-messina-36503049/', icon: linkedIn, label: 'LinkedIn' },
+  { href: `mailto:${email}`, icon: emailIcon, label: email },
+  { href: githubUrl, icon: GitHub, label: 'GitHub' },
+  { href: linkedinUrl, icon: linkedIn, label: 'LinkedIn' },
 ];
 
 export default function Footer() {
