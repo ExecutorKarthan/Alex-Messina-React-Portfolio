@@ -5,7 +5,7 @@ import content from '../content'
 
 const { heading, photoAlt, bio, sections } = content.about
 
-function Entry({ heading, subheading, location, dates, text, bullets }) {
+function Entry({ heading, subheading, location, dates, text, explanation, bullets }) {
   const meta = [subheading, location].filter(Boolean).join(' · ')
   return (
     <li className="py-5 first:pt-0 last:pb-0">
@@ -15,6 +15,7 @@ function Entry({ heading, subheading, location, dates, text, bullets }) {
       </div>
       {meta && <p className="text-sm text-brand-700">{meta}</p>}
       {text && <p className="mt-2 text-slate-700">{text}</p>}
+      {explanation && <p className="mt-3 list-disc space-y-2 pl-5 text-slate-700">{explanation}</p>}
       {bullets && bullets.length > 0 && (
         <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700">
           {bullets.map((bullet, index) => (

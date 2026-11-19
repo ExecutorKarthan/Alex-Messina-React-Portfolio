@@ -33,14 +33,16 @@ about: {
 
     // One entry per paragraph
     bio: [
-      `Hello! My name is Alex Messina and I am an inquisitive, life-long learner that enjoys exploring challenges. I am a firm believer in honest self-reflection as a path to improvement 
-      and view criticism as an opportunity to engage in that self-reflection. I think that collaboration is the ideal tool to produce the best quality product as it allows for a larger 
-      body of knowledge and unique perspectives to be applied to the problem in question.`,
-      `I tend to spend my free time programming to help someone make a repetitive, tedious task doable faster. I recently completed my Web Developer Boot Camp through Washington University 
-      - St. Louis and completed an internship with Washington University Medical School's medical imaging laboratory. My internship focused on building educational materials, such as a 
-      responsive web app, to make medical imaging concepts more accessible to middle and high school students. You can see more of my projects, where I have leveraged my computer science 
-      and web design skills on my GitHub page.`,
-      `If you have any questions for me, you can contact me via email or use the contact form on my website.`,
+      `Hello! My name is Alex Messina, and I am an inquisitive, lifelong learner who enjoys exploring challenges with a growth mindset. I’m a firm believer in honest self-reflection as a path to improvement and 
+      view feedback as a gift. I love working on teams because collaboration brings a broader pool of knowledge and fresh perspectives to any problem—some of the best work I’ve done came from a crew rallying 
+      around a shared vision.`,
+      `When something sparks my curiosity, I tend to energetically engage it—and lately, that’s meant leaning into technical projects. I enjoy engineering digital apps and tools because they let me channel 
+      creativity toward a concrete goal, which led me to complete a coding boot camp and pursue programming-focused action research. I started beekeeping hoping for plenty of honey and ended up fascinated by 
+      how insects produce something so complex—which has grown into helping my father-in-law start his own hives and giving school presentations on honey bees and pollinators. I also founded my high school’s 
+      esports program to give students a team experience they might not otherwise find, which eventually grew into a state title and the first live, high-school-hosted Overwatch tournament in our county’s 
+      history. I am especially interested in endeavors that support my colleagues and peers- it's a small way for me to improve the lives of my teammates.`,
+      `If I can help out with a project or collaboration, please don’t hesitate to reach out. I’m always looking for interesting problems to tackle, and you can connect with me via email or the contact 
+      form on my website.`,
     ],
 
     // Each section becomes one expandable card, shown in this order.
